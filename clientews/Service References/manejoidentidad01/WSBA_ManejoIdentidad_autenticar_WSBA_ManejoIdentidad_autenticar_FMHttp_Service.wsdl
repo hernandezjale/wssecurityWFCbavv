@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:this="http://soi.avvillas.com/ManejoIdentidad/WSBA_ManejoIdentidad_autenticar" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="WSBA_ManejoIdentidad_autenticar_WSBA_ManejoIdentidad_autenticar_FMHttp_Service" targetNamespace="http://soi.avvillas.com/ManejoIdentidad/WSBA_ManejoIdentidad_autenticar" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://soi.avvillas.com/ManejoIdentidad/WSBA_ManejoIdentidad_autenticar" location="WSBA_ManejoIdentidad_autenticar_FM.wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="WSBA_ManejoIdentidad_autenticar_WSBA_ManejoIdentidad_autenticar_FMHttpBinding" type="this:WSBA_ManejoIdentidad_autenticar_FM">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="autenticar">
+      <soap:operation soapAction="" />
+      <wsdl:input name="autenticarRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="autenticarResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSBA_ManejoIdentidad_autenticar_WSBA_ManejoIdentidad_autenticar_FMHttpService">
+    <wsdl:port name="WSBA_ManejoIdentidad_autenticar_WSBA_ManejoIdentidad_autenticar_FMHttpPort" binding="this:WSBA_ManejoIdentidad_autenticar_WSBA_ManejoIdentidad_autenticar_FMHttpBinding">
+      <soap:address location="http://localhost:9080/PFBA_ManejoIdentidad01Web/sca/WSBA_ManejoIdentidad_autenticar" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

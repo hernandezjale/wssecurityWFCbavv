@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema targetNamespace="http://soi.avvillas.com/ManejoIdentidad/WSBA_ManejoIdentidad_autenticar" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="os_AutenticacionResp">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

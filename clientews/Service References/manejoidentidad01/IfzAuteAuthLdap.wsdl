@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:bons1="http://soi.avvillas.com/ManejoIdentidad/WSBA_ManejoIdentidad_autenticar" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="IfzAuteAuthLdap" targetNamespace="http://soi.avvillas.com/ManejoIdentidad/WSBA_ManejoIdentidad_autenticar" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:bons1="http://soi.avvillas.com/ManejoIdentidad/WSBA_ManejoIdentidad_autorizar" xmlns:bons2="http://soi.avvillas.com/ManejoIdentidad/WSBA_ManejoIdentidad_autenticar" targetNamespace="http://soi.avvillas.com/ManejoIdentidad/WSBA_ManejoIdentidad_autenticar">
+      <xsd:include schemaLocation="os_AutenticacionResp.xsd" />
+      <xsd:include schemaLocation="oe_Autenticacion.xsd" />
+      <xsd:element name="autenticar">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="oe_entrada" nillable="true" type="bons2:oe_Autenticacion" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="autenticarResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="os_salida" nillable="true" type="bons2:os_AutenticacionResp" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="autenticarRequestMsg">
+    <wsdl:part name="autenticarParameters" element="bons1:autenticar" />
+  </wsdl:message>
+  <wsdl:message name="autenticarResponseMsg">
+    <wsdl:part name="autenticarResult" element="bons1:autenticarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSBA_ManejoIdentidad_autenticar_FM">
+    <wsdl:operation name="autenticar">
+      <wsdl:input name="autenticarRequest" message="bons1:autenticarRequestMsg" />
+      <wsdl:output name="autenticarResponse" message="bons1:autenticarResponseMsg" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
